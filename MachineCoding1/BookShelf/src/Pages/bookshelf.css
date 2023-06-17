@@ -1,0 +1,31 @@
+.bookshelf{
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.bookcard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.BookCard{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.bookrow{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content:center;
+    align-items: center;
+}
+
+
+.BookImage{
+    width: 200px;
+    height: 300px;
+}
