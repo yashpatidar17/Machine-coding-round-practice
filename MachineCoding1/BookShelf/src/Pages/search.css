@@ -14,3 +14,6 @@
     flex-direction:row;
     gap: 20px;
 }
+.homeButton{
+    margin-bottom:20px;
+}
