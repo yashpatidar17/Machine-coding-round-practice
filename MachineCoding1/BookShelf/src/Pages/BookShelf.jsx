@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import "./bookshelf.css";
 import { BookContext } from "../Context/BookContextProvider";
@@ -10,54 +10,71 @@ export const BookShelf = () => {
   const currentlyReading = bookData.filter(
     (item) => item.currentState === "currently reading"
   );
+  const [loading, setLoading] = useState(true);
   const read = bookData.filter((item) => item.currentState === "read");
   const wantToRead = bookData.filter(
     (item) => item.currentState === "want to read"
   );
 
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+
   return (
-    <div className="bookshelf">
-      <h2>Book Shelf </h2>
-      <button onClick={() => naviagte("/search")}>Search Books</button>
-      <div className="bookcard">
-        <h2>Currently Reading</h2>
-        <div className="bookrow">
-          {currentlyReading.length === 0 ? (
-            <p>There is no book in this category</p>
-          ) : (
-            currentlyReading?.map((book) => (
-              <Book book={book} fun={currentStatehandler} key={book.id} />
-            ))
-          )}
+    <div>
+      {loading ? (
+        <div className="loading">
+        <p >Loading...</p>
         </div>
-        <hr />
-      </div>
-      <div className="bookcard">
-        <h2>Read</h2>
-        <div className="bookrow">
-          {read.length === 0 ? (
-            <p>There is no book in this category</p>
-          ) : (
-            read?.map((book) => (
-              <Book book={book} fun={currentStatehandler} key={book.id} />
-            ))
-          )}
+
+        
+      ) : (
+        <div className="bookshelf">
+          <h2>Book Shelf </h2>
+          <button onClick={() => naviagte("/search")}>Search Books</button>
+          <div className="bookcard">
+            <h2>Currently Reading</h2>
+            <div className="bookrow">
+              {currentlyReading.length === 0 ? (
+                <p>There is no book in this category</p>
+              ) : (
+                currentlyReading?.map((book) => (
+                  <Book book={book} fun={currentStatehandler} key={book.id} />
+                ))
+              )}
+            </div>
+            <hr />
+          </div>
+          <div className="bookcard">
+            <h2>Read</h2>
+            <div className="bookrow">
+              {read.length === 0 ? (
+                <p>There is no book in this category</p>
+              ) : (
+                read?.map((book) => (
+                  <Book book={book} fun={currentStatehandler} key={book.id} />
+                ))
+              )}
+            </div>
+            <hr />
+          </div>
+          <div className="bookcard">
+            <h2>Want to read</h2>
+            <div className="bookrow">
+              {wantToRead.length === 0 ? (
+                <p>There is no book in this category</p>
+              ) : (
+                wantToRead?.map((book) => (
+                  <Book book={book} fun={currentStatehandler} key={book.id} />
+                ))
+              )}
+            </div>
+            <hr />
+          </div>
         </div>
-        <hr />
-      </div>
-      <div className="bookcard">
-        <h2>Want to read</h2>
-        <div className="bookrow">
-          {wantToRead.length === 0 ? (
-            <p>There is no book in this category</p>
-          ) : (
-            wantToRead?.map((book) => (
-              <Book book={book} fun={currentStatehandler} key={book.id} />
-            ))
-          )}
-        </div>
-        <hr />
-      </div>
+      )}
     </div>
   );
 };
