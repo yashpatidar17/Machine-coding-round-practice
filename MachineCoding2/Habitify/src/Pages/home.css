@@ -1,0 +1,75 @@
+.createHabit{
+    padding:50px;
+    border: 2px solid white;
+    border-radius: 5px;
+    margin:10px 0;
+}
+.habit-first{
+  padding:50px;
+    
+    border-radius: 5px;
+}
+
+.habits{
+  display: flex;
+  flex-direction: column;
+  border: 2px solid white;
+  margin-bottom: 10px;
+  
+}
+
+.archive-first{
+  padding:50px;
+  border: 2px solid white;
+  border-radius: 5px;
+  margin:10px 0;
+}
+
+.buttonDiv{
+  display: flex;
+  flex-direction: row;
+  margin: 10px auto;
+  gap: 10px;
+  
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+}
+/* modal.css */
+
+.modal {
+   
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 15px;
+    background-color: #242424;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .modal h2 {
+    margin-bottom: 10px;
+  }
+  
+  .modal button {
+    margin-top: 10px;
+  }
+  
