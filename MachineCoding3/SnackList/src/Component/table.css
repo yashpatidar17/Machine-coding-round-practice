@@ -1,0 +1,26 @@
+.table-container {
+    width: 100%;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid white;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid white;
+  }
+  
+  th {
+    font-weight: bold;
+    border: 1px solid white;
+  }
+  
+  
+  tbody tr:last-child {
+    border-bottom: none;
+  }
+  
